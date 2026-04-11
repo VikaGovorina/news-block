@@ -1,0 +1,92 @@
+
+.newsItemContainer {
+    display: flex;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+}
+
+.imgContainer {
+    overflow: hidden;
+    flex: 1;
+    aspect-ratio: 23 / 16;
+}
+
+.imgContainer img {
+    border-radius: 10.5px;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.textContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--p-sans);
+}
+
+.newsInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.newsDate {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--text);
+}
+
+.newsTitle {
+    font-weight: 400;
+    font-size: 15.75px;
+    line-height: 24px;
+    color: var(--text-h);
+
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    gap: 3.5px;
+}
+
+.tags p {
+    background-color: var(--tag-bg);
+    border-radius: 7px;
+    color: #000000;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 10.5px;
+    line-height: 13px;
+    padding: 4px 7px;
+}
+
+.actionInfo {
+    display: flex;
+    gap: 7px;
+}
+
+.actionInfoItem {
+    display: flex;
+    gap: 3.5px;   
+    align-items: center; 
+}
+
+
+.actionInfoItem p {
+    font-family: 'TT Fellows';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12.25px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+}

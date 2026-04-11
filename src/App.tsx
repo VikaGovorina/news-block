@@ -1,30 +1,14 @@
-import { useEffect } from 'react';
-import './App.css';
-import { NewsApi } from './api/newsApi';
+import NewsBlock from './components/NewsBlock/NewsBlock';
+import styles from './App.module.css';
 
 function App() {
 
-    async function loadNews() {
-        try {
-            const newsData = await NewsApi.getNews(1, 3);
-            console.log(newsData);
-        } catch (error) {
-            console.error('Error fetching news:', error);
-        } finally {
-
-        }
-    }
-
-    useEffect(() => {
-        
-        loadNews();
-        
-    }, []);
-
     return (
-        <>
-            
-        </>
+        <div className={styles.blocks}>
+            <NewsBlock blockTitle='Новости компании' />
+            <div style={{width:'500px'}}></div>
+            <NewsBlock blockTitle='Бизнес' state='rubric'/>
+        </div>
     );
 }
 

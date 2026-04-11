@@ -1,21 +1,31 @@
+
+@font-face {
+  font-family: 'TT Fellows';
+  src: url('./assets/fonts/TT\ Fellows\ Trial\ Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
+  --text: #85888E;
+  --text-h: #181A1F;
   --bg: #fff;
   --border: #e5e4e7;
-  --code-bg: #f4f3ec;
+  --main-bg: #F5F5F5;
   --social-bg: rgba(244, 243, 236, 0.5);
+  --tag-bg: #E2E2E4;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: 'TT Fellows', system-ui, Roboto, 'Segoe UI', sans-serif;
+  --p-sans: 'PT Sans', system-ui, Roboto, 'Segoe UI', sans-serif;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
   color-scheme: light dark;
   color: var(--text);
-  background: var(--bg);
-
+  background-color: var(--main-bg);
 }
 
 body {
@@ -24,3 +34,12 @@ body {
   box-sizing: border-box;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
