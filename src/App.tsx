@@ -6,7 +6,7 @@ function App() {
     return (
         <div className={styles.blocks}>
             <NewsBlock blockTitle='Новости компании' />
-            <div style={{width:'500px'}}></div>
+            <NewsBlock blockTitle='Важные новости' state='empty'/>
             <NewsBlock blockTitle='Бизнес' state='rubric'/>
         </div>
     );

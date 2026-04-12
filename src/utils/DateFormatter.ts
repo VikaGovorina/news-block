@@ -25,5 +25,24 @@ export const DateFormatter = {
         const minutes = date.getUTCMinutes().toString().padStart(2, '0');
         
         return `${number} ${month} ${hours}:${minutes}`;
+    },
+
+    getDateMonthYear(dateString: string) {        
+        const date = new Date(dateString);
+        const number = date.getUTCDate();
+        const month = monthsForms[date.getMonth()];
+        const year = date.getFullYear();     
+        
+        return `${number} ${month} ${year}`;
+    },
+
+    getCurrentWeekdayDateMonth() {
+        const date = new Date();
+        let weekday = date.toLocaleDateString('ru', { weekday: 'long' });
+        weekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
+        const number = date.getUTCDate();
+        const month = monthsForms[date.getMonth()];
+        
+        return `${weekday}, ${number} ${month}`;
     }
 } 

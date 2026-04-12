@@ -4,14 +4,14 @@ import { DateFormatter } from "../../../../utils/DateFormatter";
 import styles from "./NewsLayout.module.css";
 import { IconEye, IconThumbUp } from '@tabler/icons-react';
 
-export default function NewsLayout({ news }: { news: NewsItem }) {
+export default function NewsLayout({ news, showImg }: { news: NewsItem; showImg: boolean }) {
     const img = `${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`;
 
     return (
         <div className={styles.newsItemContainer}>
-            <div className={styles.imgContainer}>
-                <img src={img} alt={news.title}></img>
-            </div>
+            {showImg && (<div className={styles.imgContainer}>
+                <img src={img} alt={news.title} loading="lazy"></img>
+            </div>)}
             <div className={styles.textContainer}>
                 <p className={styles.newsDate}>{DateFormatter.getDateMonthsTime(news.publishedAt)}</p>
                 <p className={styles.newsTitle}>{news.title}</p>

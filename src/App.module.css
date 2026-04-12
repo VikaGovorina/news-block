@@ -1,4 +1,12 @@
 
 .blocks {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .blocks {
+        grid-template-columns: 1fr;
+    }
 }

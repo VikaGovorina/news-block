@@ -10,11 +10,13 @@
 :root {
   --text: #85888E;
   --text-h: #181A1F;
+  --icon: #2B2E33;
   --bg: #fff;
   --border: #e5e4e7;
   --main-bg: #F5F5F5;
   --social-bg: rgba(244, 243, 236, 0.5);
   --tag-bg: #E2E2E4;
+  --border: 1px solid #E2E2E4;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { ENV } from "../config/env"
-import type { NewsResponse } from "../types/news";
+import type { EmptyNewsResponse, NewsResponse } from "../types/news";
 
 
 const api = axios.create({
@@ -12,6 +12,19 @@ export const NewsApi = {
         const { data } = await api.request({
             method: 'GET',
             url: '/news/feed/company/short',
+            params: {
+                perPage,
+                page
+            }
+        });
+
+        return data;
+    },
+
+    async getEmptyNews(page: number = 1, perPage: number = 3): Promise<EmptyNewsResponse> {
+        const { data } = await api.request({
+            method: 'GET',
+            url: '/news/feed/company/empty',
             params: {
                 perPage,
                 page

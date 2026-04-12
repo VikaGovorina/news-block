@@ -46,7 +46,6 @@
     font-size: 15.75px;
     line-height: 24px;
     color: var(--text-h);
-
 }
 
 .tags {
@@ -82,7 +81,7 @@
 
 
 .actionInfoItem p {
-    font-family: 'TT Fellows';
+    font-family: var(--sans);
     font-style: normal;
     font-weight: 400;
     font-size: 12.25px;
@@ -90,3 +89,14 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 1024px) {
+    .newsItemContainer {
+        flex-direction: column;
+    }
+
+    .imgContainer {
+        aspect-ratio: 17 / 5;
+    }
+}
+

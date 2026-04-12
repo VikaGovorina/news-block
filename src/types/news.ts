@@ -26,3 +26,10 @@ export interface NewsResponse {
     news: NewsItem[];
     minDatePublication: string;
 }
+
+export interface EmptyNewsResponse {
+    totalPages: number;
+    perPage: number;
+    news: [];
+    minDatePublication: string;
+}

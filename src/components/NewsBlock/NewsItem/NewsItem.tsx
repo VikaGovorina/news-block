@@ -6,12 +6,16 @@ interface NewsItemProps {
     news: NewsItem;
     state: string;
     index: number;
+    isMobile: boolean;
 }
 
-export default function NewsItem({ news, state, index }: NewsItemProps) {
+export default function NewsItem({ news, state, index, isMobile }: NewsItemProps) {
 
     if (state === 'news') {
-        return <NewsLayout news={news}/>;
+        return <NewsLayout
+            news={news}
+            showImg={!isMobile || index === 0}
+        />;
     }
 
     if (state === 'rubric') {
