@@ -33,6 +33,24 @@
 - CSS Modules
 - Axios
 
+
+## Установка
+
+```bash
+git clone https://github.com/VikaGovorina/news-block.git
+npm install
+```
+
+## Переменные окружения
+
+Создайте файл `.env` на основе `.env.default`
+
+## Запуск
+
+```bash
+npm run dev
+```
+
 ## Принятые решения
 
 - Разделение layout-компонентов
@@ -56,3 +74,6 @@
 - ✅ **Ленивая загрузка изображений**
 - ✅ **Анимации**
 - ✅ **Типизация**
+
+<img width="2879" height="1563" alt="image" src="https://github.com/user-attachments/assets/5d95f55d-fb85-40e6-b9d2-dabce389577b" />
+<img width="618" height="2246" alt="localhost_5173_" src="https://github.com/user-attachments/assets/baeb5d7f-d649-4176-8332-0a3e03e9a8f6" />
