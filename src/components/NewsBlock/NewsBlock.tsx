@@ -94,7 +94,7 @@ export default function NewsBlock({ blockTitle, perPage = 3, state = "news" }: N
                 <Skeleton state={state} perPage={perPage} isMobile={isMobile}/>
             )}
 
-            {!data?.news.length && !loading && (
+            {!isError && !data?.news.length && !loading && (
                 <div className={styles.placeholder}>
                     <div className={styles.placeholderContainer}>
                         <img alt="Новых новостей нет" src={placeholder}></img>
