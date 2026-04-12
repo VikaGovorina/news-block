@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "http://1e14c3489fcb.vps.myjino.ru:5000/api/v1/:path*"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "http://1e14c3489fcb.vps.myjino.ru:5000/assets/$1"
     }
   ]
 }
