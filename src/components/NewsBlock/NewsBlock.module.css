@@ -118,7 +118,7 @@
 
 .animateItem {
     opacity: 0;
-    animation: fadeSlideUp 0.4s ease forwards;
+    animation: smoothAppearance 0.4s ease forwards;
 }
 
 @keyframes spin {
@@ -130,7 +130,7 @@
     }
 }
 
-@keyframes fadeSlideUp {
+@keyframes smoothAppearance {
     from {
         opacity: 0;
         transform: translateY(10px);

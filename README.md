@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Универсальный компонент новостного блока
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Preview]()
 
-Currently, two official plugins are available:
+## Описание
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Новостной портал, реализованный в виде переиспользуемого React-компонента, предназначенного для отображения новостей компании и тематических рубрик. Компонент поддерживает разные состояния отображения (общие новости, новости рубрики, пустое состояние) и может использоваться на различных страницах приложения.
 
-## React Compiler
+Основной акцент сделан на универсальность компонента, удобство использования и соответствие UX/UI требованиям.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Функционал
 
-## Expanding the ESLint configuration
+- Загрузка новостей с API с поддержкой пагинации
+- Отображение списка новостей в двух вариантах:
+  - “Новости компании” (с изображениями у каждой новости)
+  - “Рубрика” (с изображением только у первой новости)
+- Обработка пустого состояния
+- Обработка ошибок загрузки данных
+- Пагинация:
+  - переход вперед/назад
+  - блокировка кнопок на первой/последней странице
+- Skeleton loader при загрузке данных
+- Lazy loading изображений
+- Адаптивная верстка
+- Анимации появления элементов списка
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Стек
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React (Vite)
+- TypeScript
+- Tabler Icons
+- Intersection Observer API
+- CSS Modules
+- Axios
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Принятые решения
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Разделение layout-компонентов
+  - Реализованы отдельные компоненты отображения (NewsLayout, RubricLayout) для управления UI в зависимости от состояния
+- Универсальный компонент NewsBlock
+  - Один компонент используется для разных сценариев (новости компании, рубрика, пустое состояние) через проп state
+- Кэширование
+  - Поскольку в технологическом стеке не было явно прописано, что можно использовать Tanstack Query, я приняла решение реализовывать кэширование через useState (объект cache), чтобы избежать повторных запросов при переключении страниц
+- Skeleton вместо спиннера
+  - Для улучшения UX реализован skeleton, повторяющий структуру карточек
+- Адаптивность
+  - useMediaQuery для адаптивности для повышения производительности при загрузке изображений
+- Ленивая загрузка
+  - Для того чтобы обложки загружались при скролле был использован Intersection Observer API
+- Анимация плавного появления новостей
+  - Добавлена анимация smoothAppearance с разными задержками для каждой новости
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Дополнительные требования
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- ✅ **Кэширование**
+- ✅ **Ленивая загрузка изображений**
+- ✅ **Анимации**
+- ✅ **Типизация**
