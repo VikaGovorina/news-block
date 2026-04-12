@@ -1,6 +1,6 @@
 # Универсальный компонент новостного блока
 
-[Live Preview]()
+[Live Preview](https://news-block-ch2qtb3tx-vikagovorinas-projects.vercel.app/)
 
 ## Описание
 
