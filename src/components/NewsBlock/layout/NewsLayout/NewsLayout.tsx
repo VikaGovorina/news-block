@@ -6,7 +6,7 @@ import styles from "./NewsLayout.module.css";
 import { IconEye, IconThumbUp } from '@tabler/icons-react';
 
 export default function NewsLayout({ news, showImg }: { news: NewsItem; showImg: boolean }) {
-    const img = `${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`;
+    const img = `${ENV.API_URL}${news.cover?.images[0]?.hd}`;
     const { ref, visibleSrc } = useLazyImage(img);
 
     return (

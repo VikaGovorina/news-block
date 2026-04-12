@@ -12,7 +12,7 @@ interface RubricLayoutProps {
 }
 
 export default function RubricLayout({ news, showImg, isTopNews }: RubricLayoutProps) {
-    const img = `${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`;
+    const img = `${ENV.API_URL}${news.cover?.images[0]?.hd}`;
     const { ref, visibleSrc } = useLazyImage(img);
 
     return (
@@ -20,7 +20,6 @@ export default function RubricLayout({ news, showImg, isTopNews }: RubricLayoutP
             {showImg &&
                 <div className={styles.imgContainer}>
                     <img
-                        // src={`${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`}
                         src={visibleSrc}
                         ref={ref}
                         alt={news.title}
