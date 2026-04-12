@@ -1,5 +1,4 @@
 import { IconEye, IconThumbUp, IconStarFilled } from "@tabler/icons-react";
-import { ENV } from "../../../../config/env";
 import type { NewsItem } from "../../../../types/news";
 import styles from "./RubricLayout.module.css";
 import { DateFormatter } from "../../../../utils/DateFormatter";
@@ -12,7 +11,7 @@ interface RubricLayoutProps {
 }
 
 export default function RubricLayout({ news, showImg, isTopNews }: RubricLayoutProps) {
-    const img = `${ENV.API_URL}${news.cover?.images[0]?.hd}`;
+    const img = `${news.cover?.images[0]?.hd}`;
     const { ref, visibleSrc } = useLazyImage(img);
 
     return (

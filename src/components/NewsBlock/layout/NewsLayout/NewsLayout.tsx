@@ -1,4 +1,3 @@
-import { ENV } from "../../../../config/env";
 import { useLazyImage } from "../../../../hooks/useLazyImg";
 import type { NewsItem } from "../../../../types/news";
 import { DateFormatter } from "../../../../utils/DateFormatter";
@@ -6,7 +5,7 @@ import styles from "./NewsLayout.module.css";
 import { IconEye, IconThumbUp } from '@tabler/icons-react';
 
 export default function NewsLayout({ news, showImg }: { news: NewsItem; showImg: boolean }) {
-    const img = `${ENV.API_URL}${news.cover?.images[0]?.hd}`;
+    const img = `${news.cover?.images[0]?.hd}`;
     const { ref, visibleSrc } = useLazyImage(img);
 
     return (

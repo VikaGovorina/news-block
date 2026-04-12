@@ -11,6 +11,10 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
       },
+      '/assets': {
+        target: 'http://1e14c3489fcb.vps.myjino.ru:5000',
+        changeOrigin: true,
+      },
     },
   },
 })
