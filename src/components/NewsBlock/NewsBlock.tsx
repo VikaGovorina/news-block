@@ -104,7 +104,7 @@ export default function NewsBlock({ blockTitle, perPage = 3, state = "news" }: N
             )}
             
             {!loading && data && data.news.length > 0 && (
-                <div>
+                <div className={styles.newsItemsContainer}>
                     <div className={`${styles.newsItems} ${(isMobile || state === 'rubric') && styles.divider} ${state === 'rubric' && styles.rubric}`}>
                         {data.news.map((item, index) => (
                             <div
@@ -118,6 +118,7 @@ export default function NewsBlock({ blockTitle, perPage = 3, state = "news" }: N
                                     state={state}
                                     index={index}
                                     isMobile={isMobile}
+                                    page = {page}
                                 />
                             </div>
                         ))}

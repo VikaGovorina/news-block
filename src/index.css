@@ -8,6 +8,9 @@
 }
 
 :root {
+  --top-bg: #FDDEAA;
+  --tag-even-bg: #AAD7FB;
+  --top-icon: #4F3709;
   --text: #85888E;
   --text-h: #181A1F;
   --icon: #2B2E33;

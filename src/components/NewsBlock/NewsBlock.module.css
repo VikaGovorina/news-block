@@ -20,6 +20,10 @@
     width: 100%;
 }
 
+.newsItemsContainer {
+    width: 100%;
+}
+
 .blockHeader h1 {
     font-weight: 600;
     font-size: 21px;

@@ -7,9 +7,10 @@ interface NewsItemProps {
     state: string;
     index: number;
     isMobile: boolean;
+    page: number;
 }
 
-export default function NewsItem({ news, state, index, isMobile }: NewsItemProps) {
+export default function NewsItem({ news, state, index, isMobile, page }: NewsItemProps) {
 
     if (state === 'news') {
         return <NewsLayout
@@ -19,7 +20,11 @@ export default function NewsItem({ news, state, index, isMobile }: NewsItemProps
     }
 
     if (state === 'rubric') {
-        return <RubricLayout news={news} showImg={index === 0} />;
+        return <RubricLayout
+            news={news}
+            showImg={index === 0}
+            isTopNews={page === 1 && index === 0}
+        />;
     }
 
     return null;

@@ -1,4 +1,5 @@
 import { ENV } from "../../../../config/env";
+import { useLazyImage } from "../../../../hooks/useLazyImg";
 import type { NewsItem } from "../../../../types/news";
 import { DateFormatter } from "../../../../utils/DateFormatter";
 import styles from "./NewsLayout.module.css";
@@ -6,11 +7,16 @@ import { IconEye, IconThumbUp } from '@tabler/icons-react';
 
 export default function NewsLayout({ news, showImg }: { news: NewsItem; showImg: boolean }) {
     const img = `${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`;
+    const { ref, visibleSrc } = useLazyImage(img);
 
     return (
         <div className={styles.newsItemContainer}>
             {showImg && (<div className={styles.imgContainer}>
-                <img src={img} alt={news.title} loading="lazy"></img>
+                <img
+                    src={visibleSrc}
+                    alt={news.title}
+                    ref={ref}
+                ></img>
             </div>)}
             <div className={styles.textContainer}>
                 <p className={styles.newsDate}>{DateFormatter.getDateMonthsTime(news.publishedAt)}</p>

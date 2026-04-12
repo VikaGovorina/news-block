@@ -5,9 +5,9 @@ function App() {
 
     return (
         <div className={styles.blocks}>
-            <NewsBlock blockTitle='Новости компании' />
+            <NewsBlock blockTitle='Бизнес' state='rubric' />
             <NewsBlock blockTitle='Важные новости' state='empty'/>
-            <NewsBlock blockTitle='Бизнес' state='rubric'/>
+            <NewsBlock blockTitle='Новости компании' />
         </div>
     );
 }

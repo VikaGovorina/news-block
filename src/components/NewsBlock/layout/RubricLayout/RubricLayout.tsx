@@ -1,27 +1,36 @@
-import { IconEye, IconThumbUp } from "@tabler/icons-react";
+import { IconEye, IconThumbUp, IconStarFilled } from "@tabler/icons-react";
 import { ENV } from "../../../../config/env";
 import type { NewsItem } from "../../../../types/news";
 import styles from "./RubricLayout.module.css";
 import { DateFormatter } from "../../../../utils/DateFormatter";
+import { useLazyImage } from "../../../../hooks/useLazyImg";
 
 interface RubricLayoutProps {
     news: NewsItem;
     showImg: boolean;
+    isTopNews: boolean;
 }
 
-export default function RubricLayout({ news, showImg }: RubricLayoutProps) {
+export default function RubricLayout({ news, showImg, isTopNews }: RubricLayoutProps) {
+    const img = `${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`;
+    const { ref, visibleSrc } = useLazyImage(img);
 
     return (
         <div className={styles.newsItemContainer}>
             {showImg &&
                 <div className={styles.imgContainer}>
                     <img
-                        src={`${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`}
+                        // src={`${ENV.BASE_NEWS_URL}${news.cover?.images[0]?.hd}`}
+                        src={visibleSrc}
+                        ref={ref}
                         alt={news.title}
-                        loading="lazy"
                     ></img>
                 </div>
             }
+            {isTopNews && (<div className={styles.topNews}>
+                <IconStarFilled width={'12.25px'} height={'12.25px'} />
+                <p>Топ новость</p>
+            </div>)}
             <div className={styles.textContainer}>
                 <p className={styles.newsTitle}>{news.title}</p>
                 <div className={styles.newsInfo}>

@@ -4,6 +4,7 @@
     align-items: stretch;
     gap: 14px;
     width: 100%;
+    cursor: pointer;
 }
 
 .imgContainer {
@@ -99,4 +100,14 @@
         aspect-ratio: 17 / 5;
     }
 }
+
+.tags p:nth-child(even) {
+    background-color: var(--tag-even-bg);
+}
+
+.newsItemContainer:hover .textContainer .newsTitle {
+    color: var(--text); 
+}
+
+
 
